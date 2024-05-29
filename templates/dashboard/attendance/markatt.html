@@ -1,0 +1,67 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Attendance</title>
+    <link rel="stylesheet" href="{% static 'markat1.css' %}">
+    <link rel="stylesheet" href="{% static 'studash.css' %}">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css"
+    rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+        <div class="upper">
+            <nav class="navbar">
+                <article class="art">
+                    <div id="box1">
+                        <a href="{% url 'home' %}">
+                            <label class="logo" style=" color: white;
+                            font-weight: bold; cursor: pointer;">TCOER</label>
+                        </a>
+                    </div>
+                   
+                    <div id="box2">
+                        <ul class="list">
+                            <li><a href="{% url 'home' %}">Dashboard</a></li>
+                            <li><a href="{% url 'mark' %}">Attendance</a></li>
+            
+                            <li><a href="{% url 'profile' %}">Profile</a></li>
+                            <li><a href="{% url 'indexpg' %}">Logout</a></li> 
+                        </ul>
+                    </div>
+                    <div id="box3">
+                    </div>
+                </article>
+            </nav>
+        </div>
+        <div class="cards" id="c1">
+        <div class="attcont">
+            <form method="post" id="attendanceForm" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="sub">
+                   
+                    <h3 id="selsub" >SELECT SUBJECT :</h3>
+                    <select name="subject" id="branch">
+                        <optgroup label="ENTC-BE" >
+                            {% for subject in subjects %}
+                            <option value="{{ subject }}">{{ subject }}</option>
+                            {% endfor %}
+                            
+                        </optgroup>
+                    </select>
+                    <input id="fil" type="file" name="photo" required accept="image/*">
+                <button type="submit" id="btn">Submit</button>
+            </div> 
+                </form>   
+             {% comment %} <section id="cardatt">
+                <video id="webcam" autoplay playsinline></video> <!-- Video element to display webcam feed -->
+            </section>
+            <button id="btn">Submit</button>   {% endcomment %}
+        </div>
+    </div>
+</div>      
+</body>
+</html>

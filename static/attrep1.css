@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+justify-content: center;
+align-items: center;
+background-image: url('https://images.unsplash.com/photo-1508615070457-7baeba4003ab?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+background-size: cover;
+background-position: center;
+}
+
+.tabdata{
+    width: 100%;
+}
+
+#rep{
+    text-align: center;
+    padding-top: 40px;
+    margin-top: 10%;
+}
+
+#driveTable{
+   margin-left: 10%;
+width: 80%;
+}
+
+table {
+  
+    border-collapse: collapse;
+    margin-top: 2%;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    background-color: #f2f2f2;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+
+    @media screen and (max-width:800px) {
+        
+        .tabdata{
+            width: 50px;
+        }
+        #rep{
+            width: 50vh;
+            margin-left: 30%;
+        }
+
+        #driveTable{
+            position: absolute;
+            width: 10%;
+            margin-top: 5%; 
+        }
+        
+    }

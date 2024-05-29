@@ -1,0 +1,29 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+   
+    
+    <div class="index">                 
+        
+        <h2>Attendance System</h2>
+        <p>"Attend today, and achieve tomorrow."</p>
+    
+        <div class="flex">            
+        
+        </div>      
+        <div class="butt">                     
+        <button class="btn" onclick="window.location.href= '{% url 'signin' %}'">Student login</button>
+        <button class="btn" onclick="window.location.href= '{% url 'login' %}'">Faculty login</button>
+        </div>
+      </div>
+    </div> 
+        
+</body>
+</html>

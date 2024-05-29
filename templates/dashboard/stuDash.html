@@ -1,0 +1,71 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="{% static 'studash.css' %}">
+    <link rel="stylesheet" href="{% static 'cardsstudt.css' %}">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+</head>
+<body>
+    <div class="main">
+        <div class="upper">
+            <nav class="navbar">
+                <article class="art">
+                    <div id="box1">
+                        <a href="{% url 'home' %}">
+                            <label class="logo" style=" color: white;
+                            font-weight: bold; cursor: pointer;">TCOER</label>
+                        </a>
+                    </div>
+                   
+                    <div id="box2">
+                        <ul class="list">
+                            <li><a href="{% url 'home' %}">Dashboard</a></li>
+                            <li><a href="{% url 'mark' %}">Attendance</a></li>
+                            {% comment %} <li><a href="{% url 'track' %}">Progress</a></li> {% endcomment %}
+                            <li><a href="{% url 'profile' %}">Profile</a></li>
+                            <li><a href="{% url 'indexpg' %}">Logout</a></li>            
+                        </ul>
+                    </div>
+                    <div id="box3">
+                    </div>
+                   </article>
+            </nav>
+        </div>
+        <div class="lower">
+            <div class="cards" id="c1">
+                <h3 style="margin-left: 30px">Notice</h3>
+                <div class="scrollable-container">
+                    <div class="notice-container">
+                        {% for notice in notices %}
+                        <div class="cookieCard">
+                            <p class="cookieHeading">{{ notice.text }}</p>
+                            <p class="cookieDescription">{{ notice.created_at }}</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            
+          
+            <form method="POST" action="{% url 'home' %}">
+                {% csrf_token %}
+                <div class="cards" id="c2">
+                    <h3 style="margin-left: 30px">Absent note
+        
+                    </h3>
+                    <textarea name="issue" id="issue" cols="50" rows="15"></textarea>
+                    <button id="btn" type="submit">Submit</button>                    
+                </div>
+            </form>
+           
+        </div>
+    </div>
+</body>
+</html>

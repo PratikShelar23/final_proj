@@ -1,0 +1,111 @@
+.cards{
+    height: 400px;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    margin-left: 15%;
+    width: 70%;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    background-color: rgba(65, 65, 65, 0.308);
+    border: 1px solid rgba(255, 255, 255, 0.089);
+  }
+
+.sub{
+    
+    display: flex;
+    width: 70vh;
+    height: 10%;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+}
+
+#selsub{
+    width: 80%;
+    margin-top: 10px;
+}
+
+#branch{
+    width: 60%;
+    height: 50px;
+    font-weight: 600;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+
+#btn{
+    position: absolute;
+    margin-left: 30%;
+    margin-top: 40%;
+    padding: 15px 40px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    border-radius: 10px;
+    border: 0 !important;
+    outline: 0 !important;
+    background: #4F46E5;
+    color: white;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  
+  #btn:active {
+      box-shadow: none;
+    }
+  
+    .ri-arrow-left-double-line{
+        position: absolute;
+        margin-top: 13px;
+        right: 105%;
+        }
+
+        @media screen and (max-width:800px) {
+            #c1{
+                height: 70%;
+                position: absolute;
+                justify-content: center;
+                align-items: center;
+                margin-top: 5%;
+                margin-left: 30px;
+                width: 85%;
+              }
+
+            .sub{
+                width: 70vh;
+                height: 40%;
+                position: absolute;
+                top: 20%;
+                left: 20%;  
+            }
+
+            #selsub{
+                position: absolute;
+                left: 20px;
+            }
+
+            #branch{
+                position: absolute;
+                left: 5%;
+                top: 50px;
+                width: 150px;
+            }
+            optgroup{
+                
+                height: 40px;
+            }
+
+            #fil{
+                position: absolute;
+                top: 100%;
+            }
+
+            #btn{
+
+                position: absolute;
+                top: 50%;
+                margin-left: 40px;
+            }
+        }

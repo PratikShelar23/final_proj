@@ -1,0 +1,82 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    <link rel="stylesheet" href="{% static 'studprofile.css' %}">
+    <link rel="stylesheet" href="{% static 'studash.css' %}">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+</head>
+<body>
+    <nav class="navbar">
+        <article class="art">
+            <div id="box1">
+                <a href="{% url 'home' %}">
+                    <label class="logo" style=" color: white;
+                            font-weight: bold; cursor: pointer;">TCOER</label>
+                </a>
+            </div>
+           
+            <div id="box2">
+                <ul class="list">
+                    <li><a href="{% url 'home' %}">Dashboard</a></li>
+                    <li><a href="{% url 'mark' %}">Attendance</a></li>
+                    {% comment %} <li><a href="{% url 'track' %}">Progress</a></li> {% endcomment %}
+                    <li><a href="{% url 'profile' %}">Profile</a></li>
+                    <li><a href="{% url 'indexpg' %}">Logout</a></li>            
+                </ul>
+            </div>
+            <div id="box3">
+            </div>
+           </article>
+    </nav>
+
+<div class="container">
+    <form method="post">
+        {% csrf_token %}
+    <h2>First Name :</h2> 
+<input type="text" id="firstname" name="firstName" value="{{userDtls.user.first_name}}"> 
+<h2>Last Name :</h2>
+<input type="text" id="lastname" name="lastName" value="{{userDtls.user.last_name}}">
+<h2>Email :</h2>
+<input type="text" id="email" name="emailid" value="{{userDtls.user.username}}">
+<h2>DOB :</h2>
+<input type="date" id="date" name="dob" value="{{userDtls.dob|date:'Y-m-d'}}">
+<h2>IDCODE:</h2>
+<input type="text" name="idcode"  value="{{userDtls.idcode}}">
+<!-- <div class="right">
+    <h2>Department :</h2>
+    <input type="text" id="dept" name="dept" placeholder="Enter your Department" required>
+</div>  -->
+</div>
+<div class="other-data">
+</div>
+
+{% comment %} <div class="image">
+    <nav>MY PROFILE</nav>
+    <input type="file" name="Image" id="Image" accept="image/*" >
+    <p style=" position: absolute; bottom: 20%; left: 20px;">JPG or PNG no longer than 5 MB</p>
+</div> {% endcomment %}
+<button type="submit" id="btn">Update</button>
+</form>
+
+
+{% if error == "no" %}
+<script>
+    alert('Your Profile has been Updated');
+    window.location=('{% url 'profile' %}');
+</script>
+{% endif %}
+
+{% if error == "yes" %}
+<script>
+    alert('Something went wrong. Try Again...');
+</script>
+{% endif %}
+</body>
+</html>

@@ -1,0 +1,49 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>student login</title>
+    <link rel="stylesheet" href="{% static 'stulogin.css' %}">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+</head>
+<body>
+    <div class="form-container">
+        <a href="{% url 'indexpg' %}">
+            <i class="ri-arrow-left-double-line"> 
+            </i>
+        </a>
+        
+
+        <p class="title">Login </p>
+        <form class="form" method="POST" action="{% url 'signin'%}">
+          {% csrf_token %}
+          <input type="email" class="input" placeholder="Email" name="emailid">
+          <input type="password" class="input" placeholder="Password" name="password">
+          {% comment %} <p class="page-link">
+            <span class="page-link-label">Forgot Password?</span>
+          </p> {% endcomment %}
+          <button type="submit" class="form-btn">Sign In</button>
+        </form>
+        <p class="sign-up-label">
+          Don't have an account?<span class="sign-up-link" onclick="window.location.href= '{% url 'regis' %}'">Sign up</span>
+        </p>
+      </div>
+      {% if error == "no" %}
+      <script>
+          alert('Logged In Successfully');
+          window.location=('{% url 'home' %}');
+      </script>
+      {% endif %}
+      
+      {% if error == "yes" %}
+      <script>
+          alert('Invalid Credential. Try Again...');
+      </script>
+      {% endif %} 
+</body>
+</html>

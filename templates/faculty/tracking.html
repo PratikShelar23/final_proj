@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TPO POST</title>
+    <link rel="stylesheet" href="{%static 'homepage.css'%}">
+    <link rel="stylesheet" href="{% static 'tpopost.css' %}"> 
+    
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <article class="art">
+            <div id="box1">
+                <a href="{% url 'home' %}">
+                    <label class="logo" style=" color: white;
+                    font-weight: bold; cursor: pointer;">TCOER</label>
+                </a>
+            </div>
+           
+            <div id="box2">
+                <ul class="list">
+                    <li><a href="{% url 'homepage' %}">Dashboard</a></li>
+                    <li><a href="{% url 'track' %}">Scheduler </a></li>
+                    <li><a href="{% url 'attendance_report' %}">Report</a></li> 
+                    <li><a href="{% url 'indexpg' %}">Logout</a></li>           
+                </ul>
+            </div>
+        </article>
+    </nav>
+    
+    <div class="container">
+        <h2>Time Table</h2>
+        
+        <form method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="id_subject">Subject</label>
+                        <input type="text" class="form-control" id="id_subject" name="subject" required>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="id_date">Date</label>
+                        <input type="date" class="form-control" id="id_date" name="date" required>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="id_start_time">Start Time</label>
+                        <input type="time" class="form-control" id="id_start_time" name="start_time" required>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="id_end_time">End Time</label>
+                        <input type="time" class="form-control" id="id_end_time" name="end_time" required>
+                    </div>
+                </div>
+     
+                <div class="col">
+                    <div class="form-group">
+                        <label for="id_longitude">Longitude</label>
+                        <input type="text" class="form-control" id="id_longitude" name="longitude" required>
+                    </div>
+                </div>
+                
+                <div class="col">
+                    <div class="form-group">
+                        <label for="id_latitude">Latitude</label>
+                        <input type="text" class="form-control" id="id_latitude" name="latitude" required>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+    </div>
+    <div class="mt-4">
+      <h2>Predefined Coordinates</h2>
+      <table class="table">
+          <thead>
+              <tr>
+                  <th>Subject</th>
+                  <th>Longitude</th>
+                  <th>Latitude</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>FOC</td>
+                  <td>73.0, 51.0, 57.0</td>
+                  <td>18.0, 31.0, 18.0</td>
+              </tr>
+              <tr>
+                  <td>MOC</td>
+                  <td>73.0, 51.0, 57.0</td>
+                  <td>18.0, 31.0, 18.0</td>
+              </tr>
+              <tr>
+                  <td>DM</td>
+                  <td>73.0, 51.0, 57.0</td>
+                  <td>18.0, 31.0, 18.0</td>
+              </tr>
+              <tr>
+                  <td>IE</td>
+                  <td>73.0, 51.0, 57.0</td>
+                  <td>18.0, 31.0, 18.0</td>
+              </tr>
+              <tr>
+                  <td>DBM</td>
+                  <td>73.0, 51.0, 57.0</td>
+                  <td>18.0, 31.0, 18.0</td>
+                  {% comment %} <td><button onclick="copyCoordinates(this.parentNode.parentNode)">Copy</button></td> {% endcomment %}
+              </tr>
+          </tbody>
+      </table>
+  </div>
+  {% comment %} <script>
+    function copyCoordinates(row) {
+        var coords = row.cells[1].textContent.trim() ;
+        navigator.clipboard.writeText(coords)
+            .then(() => alert("Coordinates copied to clipboard"))
+            .catch(err => console.error('Failed to copy coordinates: ', err));
+    }
+</script> {% endcomment %}
+
+
+{% if subject_scheduled %}
+<script>
+    alert("Subject '{{ subject_scheduled }}' has been scheduled successfully!");
+    window.location = "{% url 'track' %}";
+</script>
+{% endif %}
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student login</title>
+    <link rel="stylesheet" href="{%static 'Flogin.css'%}">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+    <form id="form" class="form" method="POST">
+      <a class="ri-arrow-left-s-line" href="{% url 'indexpg' %}"></a>
+        <p class="form-title">Sign in to your account</p>
+    
+       <div class="input-container">
+          
+            {% csrf_token %}
+           <input type="text" placeholder="Enter Username" name="fac_name">
+       </div>
+       <div class="input-container">
+           <input type="password"  class="input" placeholder="Enter password" name="fac_pass">
+         </div>
+         <div id="submit">
+          <a href="{%url 'homepage'%}">
+              <button class="submit" type="submit">Sign in</button>
+          </a>
+      </div>
+    </form>
+ <div id="loginResult"></div>
+
+
+ {% if error == "no" %}
+ <script>
+     alert('Logged In Successfully');
+     window.location=('{% url 'home' %}');
+ </script>
+ {% endif %}
+ 
+ {% if error == "yes" %}
+ <script>
+     alert('Invalid Credential. Try Again...');
+ </script>
+ {% endif %} 
+</body>
+</html>

@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height:100%;
+    width:100%;
+    font-family: montserrat;
+    text-align: center;
+    background-image: url("https://st2.depositphotos.com/4105587/42142/i/450/depositphotos_421421392-stock-photo-blur-office-background-building-exterior.jpg");
+    background-size:cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+background-position: center;
+    
+  }
+
+  #services{
+    justify-content: center;
+    display: flex;
+    text-align: center;
+}
+
+.tab-container{
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+    text-align:center;
+}
+
+
+button{
+    align-items: center;
+    width: 70%;
+    padding: 5px;
+    background-color:#4F46E5;
+    margin: 10px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border:black;
+    border-radius: 12px;
+    
+}
+
+.btn:hover {
+    background-color: #ccc;
+    color: #333;
+  }
+  
+.flex{
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+}

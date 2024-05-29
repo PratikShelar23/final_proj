@@ -1,0 +1,184 @@
+.cards{
+    height: 400px;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    margin-left: 15%;
+    width: 30%;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    background-color: rgba(65, 65, 65, 0.308);
+    border: 1px solid rgba(255, 255, 255, 0.089);
+  }
+
+h3{
+  margin-left: 35%;
+  margin-top: 5px;
+}
+  #c2{
+    height: 400px;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    margin-left: 55%;
+    width: 30%;
+  }
+
+#issue{
+  height: 70%;
+  width: 90%;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+  #btn{
+    margin-left: 35%;
+    margin-top: 1%;
+    padding: 15px 40px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    border-radius: 10px;
+    border: 0 !important;
+    outline: 0 !important;
+    background: #4F46E5;
+    color: white;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  
+  #btn:active {
+      box-shadow: none;
+    }
+
+    .cookieCard {
+      width: 300px;
+      height: 150px;
+      background: linear-gradient(to right,rgb(137, 104, 255),rgb(175, 152, 255));
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+      margin-left: 50px;
+      margin-top: 30px;
+    }
+
+    .cookieCard #co2 {
+      width: 300px;
+      height: 150px;
+      background: linear-gradient(to right,rgb(137, 104, 255),rgb(175, 152, 255));
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+      margin-left: 50px;
+      margin-top: 20px;
+    }
+    
+    .cookieCard::before {
+      width: 150px;
+      height: 150px;
+      content: "";
+      background: linear-gradient(to right,rgb(142, 110, 255),rgb(208, 195, 255));
+      position: absolute;
+      z-index: 1;
+      border-radius: 50%;
+      right: -25%;
+      top: -25%;
+    }
+    
+    .cookieHeading {
+      font-size: 1.5em;
+      font-weight: 600;
+      color: rgb(241, 241, 241);
+      z-index: 2;
+    }
+    
+    .cookieDescription {
+      font-size: 0.9em;
+      color: rgb(241, 241, 241);
+      z-index: 2;
+    }
+    
+    .cookieDescription a {
+      color: rgb(241, 241, 241);
+    }
+    
+    .acceptButton {
+      padding: 11px 20px;
+      background-color: #7b57ff;
+      transition-duration: .2s;
+      border: none;
+      color: rgb(241, 241, 241);
+      cursor: pointer;
+      font-weight: 600;
+      z-index: 2;
+    }
+    
+    .acceptButton:hover {
+      background-color: #714aff;
+      transition-duration: .2s;
+    }
+
+    .scrollable-container {
+      height: 90%; /* Adjust height as needed */
+      overflow-y: auto;
+  }
+
+    .scrollable-container::-webkit-scrollbar{
+      width: 0;
+    }
+
+    #c2 textarea{
+      font-size: 1.5rem;
+    }
+  
+
+    @media screen and (max-width:800px) {
+            
+      #c1{
+        height: 33%;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5%;
+        margin-left: 30px;
+        width: 85%;
+      }
+      
+      .cookieCard{
+        width: 300px;
+        height: 40px;
+        margin-left: 10px;
+        margin-top: 10px;
+        gap: 20px;
+        padding: 100px;
+      }
+
+      #c2{
+        width: 85%;
+        height: 30%;
+        margin-top: 70%;
+        margin-left: 30px;
+    }
+    .scrollable-container {
+      height: 80%; /* Adjust height as needed */
+      overflow-y: auto;
+  }
+  #btn{
+    margin-left: 29%;
+    margin-top: 3%;
+    padding: 15px 40px;
+    
+  }
+    }
+  

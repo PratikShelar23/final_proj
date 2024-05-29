@@ -1,0 +1,152 @@
+:root {
+    --text-color: rgba(34, 42, 66, .7);
+    --success-text: #f50606da;
+    --primary-text: #273e63;
+    --warning-text: #73510d;
+    --danger-text: #A61001;
+    --success-bg: #d6f0e0;
+    --primary-bg: #dfe7f6;
+    --warning-bg: #fbf0da;
+    --danger-bg: #FFEBE9;
+    --primary-btn-text: #3b71ca;
+}
+
+* {
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+.main {
+    background-color: #f5f6f8bb !important;
+    min-height: 100vh;
+    padding: 20px; /* Adjust as needed */
+}
+
+.text-primary {
+    color: var(--primary-btn-text) !important;
+}
+
+.fw-bold {
+    font-weight: 500 !important;
+}
+
+h2 {
+    font-weight: 400;
+    margin-bottom: unset;
+    font-size: 1.5rem; /* Adjust as needed */
+}
+
+.action-icon {
+    font-size: 1.08rem;
+}
+
+.badge-success {
+    color: var(--success-text) !important;
+    background-color: var(--success-bg);
+    border: 1px solid;
+}
+
+.badge-primary {
+    color: var(--primary-text) !important;;
+    background-color: var(--primary-bg);
+    border: 1px solid;
+}
+
+.badge-warning {
+    color: var(--warning-text) !important;;
+    background-color: var(--warning-bg);
+    border: 1px solid;
+}
+
+.badge-danger {
+    color: var(--danger-text) !important;;
+    background-color: var(--danger-bg);
+    border: 1px solid;
+}
+
+.time {
+    font-size: 0.75rem;
+}
+
+.table-container {
+    box-shadow: 0px 1px 2px 0px rgb(60 64 67 / 25%), 0px 2px 6px 2px rgb(60 64 67 / 10%);
+    padding: 1rem;
+    border-radius: 12px;
+    background-color: white;
+    overflow-x: auto;
+}
+
+th {
+    padding: 1rem 0.5rem !important;
+    font-size: 0.875rem;
+    margin-bottom: 1rem !important;
+    background-color: white !important;
+    color: var(--text-color) !important;
+    font-weight: 600 !important;
+}
+
+td {
+    padding: 0.5rem !important; /* Adjust as needed */
+}
+
+ul {
+    margin-bottom: 0rem !important;
+}
+
+.avatar-span {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+    object-fit: fill;
+    background-image: url("https://st4.depositphotos.com/14903220/22197/v/450/depositphotos_221970610-stock-illustration-abstract-sign-avatar-icon-profile.jpg");
+}
+
+.btn-link {
+    font-weight: 500;
+    color: var(--primary-text);
+    border-radius: 8px;
+    text-decoration: underline 0.1em rgb(255, 255, 255) !important;
+    text-underline-offset: 0.2em !important;
+    transition: text-decoration-color 300ms, text-underline-offset 300ms !important;
+}
+
+.btn-link:hover {
+    text-decoration-color: #0d6efd !important;
+    text-underline-offset: 0.4em !important;
+}
+
+.logout-btn {
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.page-link {
+    border: unset !important;
+    color: var(--primary-btn-text);
+}
+
+.cards{
+    height: 500px;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    margin-left: 5%;
+    width: 70%;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    background-color: rgba(65, 65, 65, 0.308);
+    border: 1px solid rgba(255, 255, 255, 0.089);
+  }
+
+
+/* Responsive adjustments */
+@media only screen and (max-width: 768px) {
+    h2 {
+        font-size: 1.2rem; /* Adjust as needed */
+    }
+}

@@ -1,0 +1,62 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title> Home Page </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'homepage.css'%}">
+    <link rel="stylesheet" href="{%static 'cardsfacut.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+  </head>
+  <body>
+    <!-- <div class="header">  </div> -->
+   
+    <nav class="navbar">
+      <article class="art">
+          <div id="box1">
+              <a href="{% url 'home' %}">
+                  <label class="logo" style=" color: white;
+                  font-weight: bold; cursor: pointer;">TCOER</label>
+              </a>
+          </div>
+         
+          <div id="box2">
+              <ul class="list">
+                  <li><a href="{% url 'homepage' %}">Dashboard</a></li>
+                  <li><a href="{% url 'track' %}">Scheduler </a></li>
+                  <li><a href="{% url 'attendance_report' %}">Report</a></li> 
+                  <li><a href="{% url 'indexpg' %}">Logout</a></li>           
+              </ul>
+          </div>
+         
+    
+    <div class="cards" id="c1">
+    <div class="cookieCard">
+      <p class="cookieHeading">Notice For Students</p>
+      <form method="POST" action="{% url 'homepage' %}">
+        {% csrf_token %}
+      <textarea name="issue" id="issue" cols="50" rows="9"></textarea>
+      <button class="acceptButton">Create Notice</button>
+    </form>
+    </div>   
+  </div>
+
+      <div class="cards" id="c2">
+          <h3>Absent note</h3>
+          <div class="scrollable-container">
+            <div class="notice-container">
+                {% for notes in absnote %}
+                <div class="cookieCard">
+                    <p class="cookieHeading">{{ notes.issue }}</p>
+                    <p class="cookieDescription">{{ notes.created_at }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+      </div>
+
+  </body>
+</html>

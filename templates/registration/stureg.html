@@ -1,0 +1,44 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{% static 'stureg.css' %}">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+</head>
+<body>
+
+    <form class="form" method="POST" action="{% url 'regis'%}">
+      {% csrf_token %}
+      <a href="{% url 'signin' %}">
+        <i class="ri-arrow-left-double-line"> 
+        </i>
+    </a>
+        <span class="title">Registration</span>
+          <input type="text" class="input" placeholder="first Name" name="firstName">
+          <input type="text" class="input" placeholder="last Name" name="lastName">
+          <input type="email" class="input" placeholder="email" name="emailid">
+          <input type="text" class="input" placeholder="ID code" name="idcode"> 
+          <input type="password" class="input" placeholder="password" name="password">
+        <span class="sub">Already have an account ? <a href="{% url 'signin' %}">Sign in</a></span>
+          <button class="submit">Submit</button>
+      </form>
+      {% if error == "no" %}
+    <script>
+        alert('Registration Successfully.');
+        window.location=('{% url 'signin' %}');
+    </script>
+    {% endif %}
+    
+    {% if error == "yes" %}
+    <script>
+        alert('Something went wrong. Try Again...');
+    </script>
+    {% endif %}
+  </body>
+</html>

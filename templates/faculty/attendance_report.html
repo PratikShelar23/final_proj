@@ -1,0 +1,39 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Report Page</title>
+  <link rel="stylesheet" href="{% static 'report.css' %}">
+</head>
+<body>
+
+<form class="form">
+  <div class="title">Attendance Report</div>
+  
+  <div class="input-group">
+    <label for="department">Department:</label>
+      <p value="electronics">Electronics and Telecommunication</p>
+    
+  </div>
+  
+  <div class="input-group">
+    <label for="class">Class:</label>
+      <p value="BE">BE</p>
+
+  </div>
+
+  <button class="button-confirm" id="excelButton">Excel →</button>
+</form>
+
+<script>
+  // Add an event listener to the button
+  document.getElementById('excelButton').addEventListener('click', function() {
+    // Specify the path to your Excel file
+    var excelFilePath = 'https://docs.google.com/spreadsheets/d/1CPaVdFCynA0tmwx0PZK5fvHPwo80uRh3/edit?usp=sharing&ouid=110456489927184935968&rtpof=true&sd=true';
+    // Open the Excel file in a new tab
+    window.open(excelFilePath);
+  });
+</script>
+
+</body>
+</html>

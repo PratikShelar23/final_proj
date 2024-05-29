@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Report</title>
+    <link rel="stylesheet" href="{% static 'attrep1.css' %}">
+    <link rel="stylesheet" href="{% static 'studash.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+<body>
+
+    <nav class="navbar">
+        <article class="art">
+            <div id="box1">
+                <a href="{% url 'home' %}">
+                    <label class="logo" style=" color: white;
+                    font-weight: bold; cursor: pointer;">TCOER</label>
+                </a>
+            </div>
+           
+            <div id="box2">
+                <ul class="list">
+                    <li><a href="{% url 'homepage' %}">Dashboard</a></li>
+                    <li><a href="{% url 'track' %}">Scheduler </a></li>
+                    <li><a href="{% url 'attendance_report' %}">Report</a></li> 
+                    <li><a href="{% url 'indexpg' %}">Logout</a></li>           
+                </ul>
+           </div>
+        </article>
+    </nav>
+
+    <div class="tabdata">
+        <a href="{% url 'home' %}">
+            <!-- <i class="ri-arrow-left-double-line"> 
+            </i> -->
+        </a>
+        <h3 id="rep">Attendance Report</h3>
+        
+        <table id="driveTable">
+            <thead>
+                <tr>
+                    <th>Course id</th>
+                    <th>Course Name</th>
+                    <th>Report</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for subject, students in attendance_data.items %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ subject }}</td>
+                        <td>
+                            <a href="{% url 'generate_excel' subject=subject %}">
+                                Download Excel
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+</html>
