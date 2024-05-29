@@ -76,14 +76,14 @@ WSGI_APPLICATION = 'Just_Mark_Project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-        # 'ENGINE': 'django.db.backends.mysql',
-        # 'NAME': 'attendances',
-        # 'USER':'admin',
-        # 'PASSWORD':'Pratik2399',
-        # 'HOST':'attendb.cfwggeq4oega.ap-south-1.rds.amazonaws.com', 
-        # 'PORT':'3306',
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'attendances',
+        'USER':'admin',
+        'PASSWORD':'Pratik2399',
+        'HOST':'attendb.cfwggeq4oega.ap-south-1.rds.amazonaws.com', 
+        'PORT':'3306',
     }
 }
 
@@ -138,12 +138,12 @@ STATICFILES_DIRS = [
 LOGIN_URL = '/profile/'  
 
 
-# AWS_ACCESS_KEY_ID = 'AKIA4C5BUJIRVPRB6YOK'
-# AWS_SECRET_ACCESS_KEY = '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'
-# AWS_STORAGE_BUCKET_NAME = 'pratikatt'
-# AWS_S3_SIGNATURE_NAME = 's3v4',
-# AWS_S3_REGION_NAME = 'ap-south-1'
-# AWS_S3_FILE_OVERWRITE = False
-# AWS_DEFAULT_ACL =  None
-# AWS_S3_VERITY = True
-# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_ACCESS_KEY_ID = 'AKIA4C5BUJIRVPRB6YOK'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'pratikatt'
+AWS_S3_SIGNATURE_NAME = 's3v4',
+AWS_S3_REGION_NAME = 'ap-south-1'
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL =  None
+AWS_S3_VERITY = True
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
